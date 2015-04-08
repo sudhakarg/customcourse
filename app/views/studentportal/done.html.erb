@@ -1,22 +1,13 @@
-
-
 <div class="" style="height: 100%;" >
-
-
 <div style="position: fixed; width: 100%;" class="portal-header" >
   <div class="hdr2" ></div>
     <div class="navigation-bar" >
-    <h1  class="logo" > <span onclick="myFunction()"  class="hide-for-medium-up" ><%= fa_icon "bars" %></span> <a href="/" class="show-for-medium-up" style="color: #fff" ><span  >Coursify</span></a></h1>
+    <h1  class="logo" > <span onclick="myFunction()"  class="hide-for-medium-up" ><%= fa_icon "bars" %></span> <a href="/" class="show-for-medium-up" style="color: #fff" ><span  >Surabhi Labs</span></a></h1>
       <div class="main-nav" >
-  
-
-      
-
            <ul class="navright" >
       <div class="last">
-
               <li>            
-                
+               
                 <a href="#" data-dropdown="drop" data-options="align:left;"><%= fa_icon "user" %> <%= current_student_user.name %></a>
 
                 <ul id="drop" class="f-dropdown" data-dropdown-content>
@@ -28,18 +19,9 @@
               </li>
             </div>
          </ul>
-            
-
       </div>
-
     </div>
-
-
-
   </div>
-
-
-
   <div class="portal-show-body row" style="height: 100%; padding-top: 65px; " >
   <div  class="portal-nav medium-3 columns show-for-medium-up" id="toggle-menu"  >
         <ul class="curriculum-ul">
@@ -48,16 +30,12 @@
           <li class="curriculum-section-heading" > <%= section.name %></li>
 
           <% section.lessons.visible.sorted.each do |lesson| %>
-            
-            
-            <%= link_to :controller => 'studentportal', :action => 'show', :permalink => lesson.permalink do %>
+             <%= link_to :controller => 'studentportal', :action => 'show', :permalink => lesson.permalink do %>
                 <li class="curriculum-section-item <%= current_page?("/portal/#{lesson.permalink}")? "thisbg" : " " %>"  > 
                 
                 <%= current_page?("/portal/#{lesson.permalink}")? "<span id='this'></span>".html_safe : " " %>
 
                 <span class="float-left" id="<%= current_page?("/portal/#{lesson.permalink}")? "" : " " %>"  ><%= lesson.name %>   </span>
-
-
                 <!-- <div class="float-right"  ><span  style=" margin:0; padding-top:0; padding-bottom:0; height: 30px; line-height: 30px;"  class="button radius tiny">Start</span></div> -->
                 <div  class="clear" ></div>
                 
@@ -85,46 +63,7 @@
     <hr>
 
     <p>Add some farewell information here, and you can even pre-sell a new course.</p>
-
-
-
-
-        
-         
-
-          
        </div>
-
     </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

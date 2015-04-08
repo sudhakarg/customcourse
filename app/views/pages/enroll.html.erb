@@ -5,7 +5,7 @@
       <nav>
 
         <div class="logo" >
-          <div class="logo-p2" ><a href="/" >Coursify</a></div>
+          <div class="logo-p2" ><a href="/" >Surabhi Labs</a></div>
         </div>
 
         <ul>
@@ -27,7 +27,7 @@
     <div class="row" >
           <div class="medium-12 columns" > 
           <p class="register-text"  >Create your account</p>
-          <p class="rtsub" >And get started in <strong>30 seconds</strong> for only <strong>$<%= current_price %></strong></p>
+          <p class="rtsub" >And get started in <strong>30 seconds</strong></p>
           </div></div>
 
           <div class="row" >
@@ -97,32 +97,10 @@
 
   <script>
     $('#customButton').click(function(){
-      var token = function(res){
-        var $input = $('<input type=hidden name=stripeToken />').val(res.id);
-        $('form').append($input).submit();
-      };
-
-      StripeCheckout.open({
-        key:         '<%= Rails.configuration.stripe[:publishable_key] %>',
-        amount:      <%= current_price_stripe %>,
-        currency:    'usd',
-        image:       '/yourlogo.png',
-        name:        'Your Course Name',
-        description: 'Enroll Today for Only $<%= current_price %>',
-        panelLabel:  'GET STARTED',
-        token:       token
-      });
-
-      return false;
+      return true;
     });
   </script>
-
-
-    <% end %>
-           
-  
-           
-          
+    <% end %>        
               
             </div>
             

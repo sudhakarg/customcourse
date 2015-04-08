@@ -5,7 +5,7 @@
       <nav>
 
         <div class="logo" >
-          <div class="logo-p2" ><a href="/" >Coursify</a></div>
+          <div class="logo-p2" ><a href="/" >Surabhi Labs</a></div>
         </div>
 
         <ul>
@@ -53,7 +53,6 @@
             <% end %>
           <% end %> 
           <p class="register-text"  >Edit Your Account Details!</p>
-          <p class="rtsub" >Need to update your details? Use the form below.</p>
           </div></div>
 
           <div class="row" >
@@ -117,7 +116,7 @@
 
     <% if student_user_signed_in?%>
 <div class="panel"  >
-    <p class="text-center" >Danger Zone! <%= link_to "Click Here to Delete Your Account Forever!", registration_path(resource_name), :class => "button expand radius ", data: { confirm: "Are you sure? You'll have to Enroll and pay again to re-register" }, method: :delete %></p>
+    <p class="text-center" >Danger Zone! <%= link_to "Click Here to Delete Your Account Forever!", registration_path(resource_name), :class => "button expand radius ", data: { confirm: "Are you sure? You'll have to Enroll again to re-register" }, method: :delete %></p>
 
   </div>
     <% end %>
