@@ -59,7 +59,7 @@ class PagesController < ApplicationController
       
       if @studentuser.save
         sign_in @studentuser
-        format.html { redirect_to onboard_path, notice: 'Congratulations! You have sucessfully signed-up for OneDayRails.' }
+        format.html { redirect_to onboard_path, notice: 'Congratulations! You have sucessfully signed-up for Ruby on Rails.' }
       else
         format.html { render action: "enroll" }
       end
