@@ -58,24 +58,8 @@ class PagesController < ApplicationController
     respond_to do |format|
       
       if @studentuser.save
-        
-
-        customer = Stripe::Customer.create(
-          :email => @studentuser.email,
-          :card  => params[:stripeToken]
-        )
-
-        charge = Stripe::Charge.create(
-          :customer    => customer.id,
-          :amount      => @amount,
-          :description => 'Reservation',
-          :currency    => 'usd'
-        )
-        if charge["paid"] == true
-          sign_in @studentuser
-          format.html { redirect_to onboard_path, notice: 'Congratulations! You have sucessfully signed-up for OneDayRails.' }
-        end
-
+        sign_in @studentuser
+        format.html { redirect_to onboard_path, notice: 'Congratulations! You have sucessfully signed-up for OneDayRails.' }
       else
         format.html { render action: "enroll" }
       end
