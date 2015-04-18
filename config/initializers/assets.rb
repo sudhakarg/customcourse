@@ -6,6 +6,7 @@ Rails.application.config.assets.precompile += %w( adminManifest.css )
 Rails.application.config.assets.precompile += %w( ckeditor/* )
 Rails.application.config.assets.precompile += %w( portalManifest.css)
 Rails.application.config.assets.precompile += %w( studentPortalManifest.js)
+Rails.application.config.assets.paths << "#{Rails.root}/app/assets/videos"
 
 
 # Precompile additional assets.

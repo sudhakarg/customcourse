@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  
-
   devise_for :student_users, :skip => [:sessions], :controllers => { :registrations => 'student_registrations'}
 
   as :student_user do
@@ -33,15 +31,15 @@ Rails.application.routes.draw do
   match 'onboard' => 'pages#onboard_send', :via => :post
 
   get 'studentportal', :to => "studentportal#index", :as => "portal"
-  get 'coming_soon', :to => "studentportal#done", :as => "coming_soon"
+  get 'done', :to => "studentportal#done", :as => "done"
   get 'next_page', :to => "studentportal#next_page", :as => "next_page"
+#  get 'railsintro', :to => "studentportal#railsintro"
   get 'portal/:permalink', :to => "studentportal#show"
-
   # resources :lessons
   # resources :sections
   #get 'pages/dashboard'
   
-
+  match 'railsintro' => "pages#railsintro", :via => :get, as: "railsintro"
   match 'enroll' =>  "pages#enroll", :via => :get, as: "enroll"
   match 'enroll' => 'pages#create', :via => :post
   match 'homee' =>  "pages#home", :via => :get, as: "homee"

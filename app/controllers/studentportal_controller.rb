@@ -77,14 +77,14 @@ class StudentportalController < ApplicationController
       redirect_to "/portal/#{@next_lesson_object.permalink}"       
     elsif @current_lesson_position == @current_section_size
       if @current_section.position == @sections_all
-        redirect_to coming_soon_path
+        redirect_to done_path
         return false
       end    
       @next_section = next_section
       
       while @next_section.lessons.size < 1
         if @next_section.position == @sections_all
-          redirect_to coming_soon_path
+          redirect_to done_path
           return false
           break
         else

@@ -5,7 +5,7 @@
       <nav>
 
         <div class="logo" >
-          <div class="logo-p2" ><a href="/" >Introduction to Ruby on Rails</a></div>
+          <div class="logo-p2" ><a href="/" >Surabhi Labs</a></div>
         </div>
 
         <ul>
@@ -43,7 +43,6 @@
             <% end %>
           <% end %> 
           <p class="register-text"  >Welcome to <strong>Ruby on Rails!</strong></p>
-          <p class="rtsub" >Please answer the 2 questions below, so we can help you get started.</p>
           </div></div>
 
           <div class="row" >
@@ -77,14 +76,13 @@
                    <% end %>
 
                   <div>                  
-                  <%= form.label :questionone, 'Type the First Question Here' %>
-                  <%= form.text_area :questionone, :placeholder => "You can also add a placeholder here" %>
+                  <%= form.label :questionone, '<Add some intro here > ' %>
+                  </div> 
+                  <div>                  
+                  <%= form.label :questiontwo, 'Hope you will have a good experience learning Ruby on Rails.' %>
                   </div> 
 
-                  <div>                  
-                  <%= form.label :questiontwo, 'Type the Second Question Here' %>
-                  <%= form.text_field :questiontwo, :placeholder => "You can also add a placeholder here" %>
-                  </div> 
+
                   
                   
 
@@ -98,8 +96,8 @@
 
                          
             </div>
-
-    <%= form.submit "Continue", :style => 'background-color:rgb(216, 38, 46);' , :class => "button expand success large radius" %>
+<br/><br/>
+    <%= form.submit "Proceed to the Course", :style => 'background-color:rgb(216, 38, 46);' , :class => "button expand success small radius" %>
 
 
     <% end %>

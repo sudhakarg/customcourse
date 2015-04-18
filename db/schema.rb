@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150331084044) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admin_users", force: true do |t|
     t.string   "email",               default: "", null: false
     t.string   "encrypted_password",  default: "", null: false
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150331084044) do
     t.string   "name"
   end
 
-  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
+  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
 
   create_table "lessons", force: true do |t|
     t.integer  "section_id"
@@ -40,8 +43,8 @@ ActiveRecord::Schema.define(version: 20150331084044) do
     t.text     "body"
   end
 
-  add_index "lessons", ["permalink"], name: "index_lessons_on_permalink"
-  add_index "lessons", ["section_id"], name: "index_lessons_on_section_id"
+  add_index "lessons", ["permalink"], name: "index_lessons_on_permalink", using: :btree
+  add_index "lessons", ["section_id"], name: "index_lessons_on_section_id", using: :btree
 
   create_table "sections", force: true do |t|
     t.string   "name"
@@ -68,7 +71,7 @@ ActiveRecord::Schema.define(version: 20150331084044) do
     t.string   "last_viewed_lecture"
   end
 
-  add_index "student_users", ["email"], name: "index_student_users_on_email", unique: true
-  add_index "student_users", ["reset_password_token"], name: "index_student_users_on_reset_password_token", unique: true
+  add_index "student_users", ["email"], name: "index_student_users_on_email", unique: true, using: :btree
+  add_index "student_users", ["reset_password_token"], name: "index_student_users_on_reset_password_token", unique: true, using: :btree
 
 end

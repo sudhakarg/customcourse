@@ -11,6 +11,8 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+/app/assets/videos/*.webm
 # Ignore all logfiles and tempfiles.
+/shared
 /log/*.log
 /tmp
